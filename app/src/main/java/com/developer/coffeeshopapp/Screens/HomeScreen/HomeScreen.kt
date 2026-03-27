@@ -27,6 +27,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.developer.coffeeshopapp.R
 import com.developer.coffeeshopapp.Screens.ui_components.MyBottomaNavBar
+import com.developer.coffeeshopapp.model.Product
 
 @Preview(showSystemUi = true, showBackground = true)
 @Composable
@@ -79,7 +80,20 @@ fun HomeScreen() {
               contentDescription = "Home Banner")
 
             Spacer(modifier = Modifier.height(16.dp))
+
             HomeScreenCategories()
+
+            //Displaying Products
+
+            val products=listOf(
+                Product(id = 1,name="Espresso", description = "strong and Rich",320.0,R.drawable.coffee_2),
+                Product(id = 2,name="Latte", description = "Smooth and Creamy",150.0,R.drawable.coffee_3),
+                Product(id = 3,name="Cappuccino", description = "With Chocolate",200.0,R.drawable.coffee_1),
+                Product(id = 4,name="Mocha", description = "Bold and Milky",240.0,R.drawable.coffee_4),
+                Product(id = 5,name="Macchiato", description = "Velvety Smooth",180.0,R.drawable.coffee_5),
+                Product(id = 6,name="Flat White", description = "Refreshing and Rich",120.0,R.drawable.coffee_6),
+                )
+
         }
     }
 }

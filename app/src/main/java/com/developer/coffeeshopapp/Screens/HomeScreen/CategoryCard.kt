@@ -18,6 +18,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.developer.coffeeshopapp.ui.theme.CreamBeige
+import com.developer.coffeeshopapp.ui.theme.IvoryWhite
 import com.developer.coffeeshopapp.ui.theme.LightBrown
 import com.developer.coffeeshopapp.ui.theme.LightGray
 
@@ -40,6 +41,6 @@ fun CategoryCard(
             fontSize = 14.sp,
             fontWeight = FontWeight.SemiBold,
             maxLines = 1,
-            color = if (isSelected) Color.White else Color.Black,)
+            color = if (isSelected) IvoryWhite else Color.Black,)
     }
 }
