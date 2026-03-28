@@ -1,4 +1,4 @@
-package com.developer.coffeeshopapp.Screens.WelcomeScreen
+package com.developer.coffeeshopapp.screens.welcomescreen
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background

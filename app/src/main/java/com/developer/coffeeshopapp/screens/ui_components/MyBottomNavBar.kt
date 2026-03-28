@@ -1,4 +1,4 @@
-package com.developer.coffeeshopapp.Screens.ui_components
+package com.developer.coffeeshopapp.screens.ui_components
 
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.size

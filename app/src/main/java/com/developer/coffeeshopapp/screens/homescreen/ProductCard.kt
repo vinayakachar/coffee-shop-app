@@ -1,4 +1,4 @@
-package com.developer.coffeeshopapp.Screens.HomeScreen
+package com.developer.coffeeshopapp.screens.homescreen
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -31,14 +31,11 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import com.developer.coffeeshopapp.R
 import com.developer.coffeeshopapp.model.Product
 import com.developer.coffeeshopapp.ui.theme.IvoryWhite
 import com.developer.coffeeshopapp.ui.theme.LightBrown
-import com.developer.coffeeshopapp.ui.theme.LightGray
 
 @Composable
 fun ProductCard(product: Product,
