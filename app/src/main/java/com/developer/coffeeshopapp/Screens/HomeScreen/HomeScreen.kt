@@ -56,32 +56,7 @@ fun HomeScreen() {
         Column(modifier = Modifier
             .padding(innerPadding)
             .padding(16.dp)) {
-            Text(text = "Location",
-                color = Color.Gray,
-                fontSize = 14.sp
-            )
 
-            Spacer(modifier = Modifier.height(4.dp))
-
-            Row(verticalAlignment = Alignment.CenterVertically){
-                Text(text = location,
-                    color = Color.White,
-                    fontWeight = FontWeight.SemiBold,
-                    fontSize = 16.sp)
-                Icon(imageVector = Icons.Default.KeyboardArrowDown,
-                    contentDescription = "changeLocation",
-                    tint = Color.White)
-            }
-            Spacer(modifier = Modifier.height(30.dp))
-            MySearchBar()
-
-            Spacer(modifier = Modifier.height(40.dp))
-          Image(painter = painterResource(R.drawable.banner_1),
-              contentDescription = "Home Banner")
-
-            Spacer(modifier = Modifier.height(16.dp))
-
-            HomeScreenCategories()
 
             //Displaying Products
 
@@ -93,6 +68,37 @@ fun HomeScreen() {
                 Product(id = 5,name="Macchiato", description = "Velvety Smooth",180.0,R.drawable.coffee_5),
                 Product(id = 6,name="Flat White", description = "Refreshing and Rich",120.0,R.drawable.coffee_6),
                 )
+
+            ProductGrid(products = products){
+                Text(text = "Location",
+                    color = Color.Gray,
+                    fontSize = 14.sp
+                )
+
+                Spacer(modifier = Modifier.height(4.dp))
+
+                Row(verticalAlignment = Alignment.CenterVertically){
+                    Text(text = location,
+                        color = Color.White,
+                        fontWeight = FontWeight.SemiBold,
+                        fontSize = 16.sp)
+                    Icon(imageVector = Icons.Default.KeyboardArrowDown,
+                        contentDescription = "changeLocation",
+                        tint = Color.White)
+                }
+                Spacer(modifier = Modifier.height(30.dp))
+                MySearchBar()
+
+                Spacer(modifier = Modifier.height(40.dp))
+                Image(painter = painterResource(R.drawable.banner_1),
+                    contentDescription = "Home Banner")
+
+                Spacer(modifier = Modifier.height(16.dp))
+
+                HomeScreenCategories()
+            }
+
+
 
         }
     }

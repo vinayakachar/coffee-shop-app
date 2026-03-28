@@ -11,11 +11,13 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
@@ -33,40 +35,67 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.developer.coffeeshopapp.R
+import com.developer.coffeeshopapp.model.Product
 import com.developer.coffeeshopapp.ui.theme.IvoryWhite
 import com.developer.coffeeshopapp.ui.theme.LightBrown
+import com.developer.coffeeshopapp.ui.theme.LightGray
 
-@Preview
 @Composable
-private fun ProductCard() {
+fun ProductCard(product: Product,
+                modifier: Modifier) {
     Card(
-        modifier = Modifier
-            .width(300.dp)
+        modifier = modifier
+            .fillMaxWidth()
             .padding(8.dp),
         shape = RoundedCornerShape(16.dp),
+        colors = CardDefaults.cardColors(
+            containerColor = Color.White
+        ),
+        elevation = CardDefaults.cardElevation(
+            defaultElevation = 8.dp
+        )
     ) {
-        Column(modifier = Modifier.padding(8.dp)) {
+        Column(
+            modifier = Modifier.padding(8.dp))
+        {
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .height(250.dp),
+                    .height(160.dp),
                 contentAlignment = Alignment.Center,
-            ) {
+            )
+            {
                 Image(
-                    painter = painterResource(R.drawable.coffee_1),
+                    painter = painterResource(id = product.imageResource),
                     contentDescription = "Product Image",
                     contentScale = ContentScale.Crop,
                     modifier = Modifier
                         .fillMaxSize()
                         .clip(RoundedCornerShape(24.dp))
-
                 )
+
+                Box(
+                    modifier= Modifier.align(Alignment.TopEnd)
+                        .padding(horizontal = 8.dp, vertical = 8.dp)
+                        .width(30.dp)
+                    .background(color = Color.White.copy(alpha = 0.7f),
+                        shape = RoundedCornerShape(16.dp)),
+                    contentAlignment = Alignment.Center
+                )
+                {
+                    Icon(painter = painterResource(R.drawable.regular_outline_heart),
+                        contentDescription = "Add to Favourites",
+                        modifier= Modifier.size(24.dp)
+                            .padding(2.dp),
+                        tint = LightBrown
+                    )
+                }
             }
 
             Spacer(modifier = Modifier.height(8.dp))
 
             Text(
-                text = "Coffee Name",
+                text = product.name,
                 style = MaterialTheme.typography.titleMedium.copy(
                     color = Color.Black,
                     fontWeight = FontWeight.SemiBold,
@@ -76,7 +105,7 @@ private fun ProductCard() {
             Spacer(modifier = Modifier.height(4.dp))
 
             Text(
-                text = "Coffee Description ",
+                text = product.description,
                 style = MaterialTheme.typography.bodySmall.copy(
                     color = Color.Gray,
                 ),
@@ -86,17 +115,18 @@ private fun ProductCard() {
 
             Spacer(modifier = Modifier.height(16.dp))
 
-            Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween,
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween,
                 verticalAlignment = Alignment.CenterVertically) {
+
                 Text(
-                    text = "Product Price",
+                    text = "₹${product.price}",
                     style = MaterialTheme.typography.titleMedium.copy(
                         color = LightBrown,
                         fontWeight = FontWeight.Bold,
-
                         )
                 )
-
 
                 IconButton(
                     onClick = {},
@@ -104,7 +134,8 @@ private fun ProductCard() {
                         color = LightBrown,
                         shape = RoundedCornerShape(10.dp)
                     )
-                ) {
+                )
+                {
                     Icon(imageVector = Icons.Default.Add,
                         contentDescription = "Add",
                         tint = IvoryWhite

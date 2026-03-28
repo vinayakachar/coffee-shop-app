@@ -22,7 +22,7 @@ fun HomeScreenCategories() {
         "Cappuccino",
         "Espresso",
         "Americano",
-        "Mocha",
+        "Latte",
     )
 
     var selectedCategory by remember { mutableStateOf(categories.first()) }
