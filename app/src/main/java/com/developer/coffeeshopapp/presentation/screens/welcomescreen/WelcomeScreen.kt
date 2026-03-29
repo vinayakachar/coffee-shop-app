@@ -1,4 +1,4 @@
-package com.developer.coffeeshopapp.screens.welcomescreen
+package com.developer.coffeeshopapp.presentation.screens.welcomescreen
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -25,7 +25,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.developer.coffeeshopapp.R
-import com.developer.coffeeshopapp.ui.theme.LightBrown
+import com.developer.coffeeshopapp.presentation.theme.LightBrown
 
 @Preview(showBackground = true, showSystemUi = true)
 @Composable

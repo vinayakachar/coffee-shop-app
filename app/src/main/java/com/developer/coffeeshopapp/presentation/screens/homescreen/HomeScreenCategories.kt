@@ -1,4 +1,4 @@
-package com.developer.coffeeshopapp.screens.homescreen
+package com.developer.coffeeshopapp.presentation.screens.homescreen
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.padding

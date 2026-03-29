@@ -1,4 +1,4 @@
-package com.developer.coffeeshopapp.screens.homescreen
+package com.developer.coffeeshopapp.presentation.screens.homescreen
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -15,9 +15,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.developer.coffeeshopapp.ui.theme.IvoryWhite
-import com.developer.coffeeshopapp.ui.theme.LightBrown
-import com.developer.coffeeshopapp.ui.theme.LightGray
+import com.developer.coffeeshopapp.presentation.theme.IvoryWhite
+import com.developer.coffeeshopapp.presentation.theme.LightBrown
+import com.developer.coffeeshopapp.presentation.theme.LightGray
 
 
 @Composable

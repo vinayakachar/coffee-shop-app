@@ -1,4 +1,4 @@
-package com.developer.coffeeshopapp.screens.homescreen
+package com.developer.coffeeshopapp.presentation.screens.homescreen
 
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -10,7 +10,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.developer.coffeeshopapp.model.Product
+import com.developer.coffeeshopapp.domain.model.Product
 
 @Composable
 fun ProductGrid(products: List<Product>,

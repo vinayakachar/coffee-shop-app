@@ -1,4 +1,4 @@
-package com.developer.coffeeshopapp.ui.theme
+package com.developer.coffeeshopapp.presentation.theme
 
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme

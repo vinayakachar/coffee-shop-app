@@ -1,4 +1,4 @@
-package com.developer.coffeeshopapp.screens.ui_components
+package com.developer.coffeeshopapp.presentation.ui_components
 
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.size
@@ -15,8 +15,8 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.developer.coffeeshopapp.R
-import com.developer.coffeeshopapp.ui.theme.LightBrown
-import com.developer.coffeeshopapp.ui.theme.LightGray
+import com.developer.coffeeshopapp.presentation.theme.LightBrown
+import com.developer.coffeeshopapp.presentation.theme.LightGray
 
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
