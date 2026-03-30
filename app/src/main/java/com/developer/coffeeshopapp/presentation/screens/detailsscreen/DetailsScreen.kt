@@ -1,6 +1,7 @@
 package com.developer.coffeeshopapp.presentation.screens.detailsscreen
 
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.KeyboardArrowLeft
@@ -13,7 +14,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.developer.coffeeshopapp.R
 import com.developer.coffeeshopapp.domain.model.Product
 
-@Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun DetailsScreen() {
     val products=listOf(
@@ -24,12 +24,18 @@ fun DetailsScreen() {
         Product(id = 5,name="Macchiato", description = "Velvety Smooth",180.0,R.drawable.coffee_5),
         Product(id = 6,name="Flat White", description = "Refreshing and Rich",120.0,R.drawable.coffee_6),
     )
+
+    val selectedProduct=products.find { it.id==1 }
+
     Scaffold(
-        topBar = {
-            DetailsScreenTopAppBar()
+        topBar = { DetailsScreenTopAppBar() }
+        , bottomBar = { DetailsScreenBottomAppBar() }
+    ) {innerPadding->
+        LazyColumn() {
+            item {
+                DetailsScreenContent(selectedProduct,innerPadding)
+            }
         }
-        , bottomBar = {
-            DetailsScreenBottomAppBar()
-        }
-    ) {}
+
+    }
 }
