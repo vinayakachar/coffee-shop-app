@@ -33,6 +33,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.developer.coffeeshopapp.R
 import com.developer.coffeeshopapp.domain.model.Product
+import com.developer.coffeeshopapp.presentation.theme.CoffeeBrown
 import com.developer.coffeeshopapp.presentation.theme.IvoryWhite
 import com.developer.coffeeshopapp.presentation.theme.LightGray
 
@@ -52,14 +53,17 @@ fun DetailsScreenContent(product: Product, innerPadding: PaddingValues) {
                 .clip(RoundedCornerShape(16.dp)),
             contentScale = ContentScale.Crop)
 
-        Spacer(modifier = Modifier.height(16.dp))
+        Spacer(modifier = Modifier.height(30.dp))
 
         Text(text = product.name,
             fontSize = 24.sp,
             fontWeight = FontWeight.Bold,
             color = Color.Black)
 
-        Row() {
+        Spacer(modifier = Modifier.height(8.dp))
+        Row(modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically) {
             Text(text = "Ice / Hot",
                 fontSize =16.sp,
                 color = Color.Gray,
@@ -67,36 +71,38 @@ fun DetailsScreenContent(product: Product, innerPadding: PaddingValues) {
             )
 
             Icon(
-                painter = painterResource(product.imageResource),
+                painter = painterResource(R.drawable.default_bean),
                 contentDescription = "Bean Icon",
                 modifier = Modifier.background(
-                    color = IvoryWhite,
+                    color = Color.White,
                     shape = RoundedCornerShape(10.dp)
                 )
                     .size(36.dp)
-                    .padding(6.dp)
+                    .padding(6.dp),
+                tint = CoffeeBrown
             )
         }
 
-        Spacer(modifier = Modifier.height(16.dp))
+        Spacer(modifier = Modifier.height(24.dp))
 
         HorizontalDivider(
             color = Color.LightGray.copy(alpha = 0.5f),
         )
 
-        Spacer(modifier = Modifier.height(16.dp))
+        Spacer(modifier = Modifier.height(24.dp))
 
         Text(text = "Description",
             fontSize = 24.sp,
             fontWeight = FontWeight.Bold,
             color = Color.Black)
 
+        Spacer(modifier = Modifier.height(8.dp))
         Text(text = product.description,
             fontSize = 16.sp,
-            color = LightGray,
+            color = Color.Gray,
             fontWeight = FontWeight.Medium)
 
-        Spacer(modifier = Modifier.height(24.dp))
+        Spacer(modifier = Modifier.height(40.dp))
 
         Text(text = "Size",
             fontSize = 24.sp,

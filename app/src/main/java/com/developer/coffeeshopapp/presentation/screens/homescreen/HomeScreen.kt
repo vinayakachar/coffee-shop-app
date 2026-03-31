@@ -61,7 +61,7 @@ fun HomeScreen(navController: NavHostController) {
             //Displaying Products
 
             val products=listOf(
-                Product(id = 1,name="Espresso", description = "strong and Rich",320.0,R.drawable.coffee_2),
+                Product(id = 1,name="Espresso", description = "Strong and Rich",320.0,R.drawable.coffee_2),
                 Product(id = 2,name="Latte", description = "Smooth and Creamy",150.0,R.drawable.coffee_3),
                 Product(id = 3,name="Cappuccino", description = "With Chocolate",200.0,R.drawable.coffee_1),
                 Product(id = 4,name="Mocha", description = "Bold and Milky",240.0,R.drawable.coffee_4),
