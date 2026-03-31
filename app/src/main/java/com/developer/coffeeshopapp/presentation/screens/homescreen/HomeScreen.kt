@@ -25,13 +25,13 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
 import com.developer.coffeeshopapp.R
 import com.developer.coffeeshopapp.presentation.ui_components.MyBottomaNavBar
 import com.developer.coffeeshopapp.domain.model.Product
 
-@Preview(showSystemUi = true, showBackground = true)
 @Composable
-fun HomeScreen() {
+fun HomeScreen(navController: NavHostController) {
 
     val location="PurnaprajnaLayout, Uttarahalli"
     Scaffold(
@@ -69,7 +69,7 @@ fun HomeScreen() {
                 Product(id = 6,name="Flat White", description = "Refreshing and Rich",120.0,R.drawable.coffee_6),
                 )
 
-            ProductGrid(products = products){
+            ProductGrid(products = products,navController=navController){
                 Text(text = "Location",
                     color = Color.Gray,
                     fontSize = 14.sp

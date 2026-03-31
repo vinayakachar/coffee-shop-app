@@ -2,6 +2,7 @@ package com.developer.coffeeshopapp.presentation.screens.homescreen
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -32,18 +33,22 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
 import com.developer.coffeeshopapp.R
 import com.developer.coffeeshopapp.domain.model.Product
+import com.developer.coffeeshopapp.presentation.navigation.Routes
 import com.developer.coffeeshopapp.presentation.theme.IvoryWhite
 import com.developer.coffeeshopapp.presentation.theme.LightBrown
 
 @Composable
 fun ProductCard(product: Product,
-                modifier: Modifier) {
+                modifier: Modifier,
+                navController: NavHostController) {
     Card(
         modifier = modifier
             .fillMaxWidth()
-            .padding(8.dp),
+            .padding(8.dp)
+            .clickable(onClick = {navController.navigate(Routes.DetailsScreen(product.id))}),
         shape = RoundedCornerShape(16.dp),
         colors = CardDefaults.cardColors(
             containerColor = Color.White

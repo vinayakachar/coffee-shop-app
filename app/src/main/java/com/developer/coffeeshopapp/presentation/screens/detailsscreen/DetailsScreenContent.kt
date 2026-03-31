@@ -62,7 +62,7 @@ fun DetailsScreenContent(product: Product, innerPadding: PaddingValues) {
         Row() {
             Text(text = "Ice / Hot",
                 fontSize =16.sp,
-                color = LightGray,
+                color = Color.Gray,
                 fontWeight = FontWeight.Medium
             )
 
