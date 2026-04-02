@@ -7,6 +7,7 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.toRoute
 import com.developer.coffeeshopapp.presentation.screens.cartscreen.CartScreen
 import com.developer.coffeeshopapp.presentation.screens.detailsscreen.DetailsScreen
+import com.developer.coffeeshopapp.presentation.screens.favouritesscreen.FavouritesScreen
 import com.developer.coffeeshopapp.presentation.screens.homescreen.HomeScreen
 import com.developer.coffeeshopapp.presentation.screens.welcomescreen.WelcomeScreen
 
@@ -30,6 +31,12 @@ fun NavGraph() {
         composable<Routes.CartScreen> {
             CartScreen(navController)
         }
+
+        composable<Routes.FavoritesScreen>{
+            FavouritesScreen(navController)
+
+        }
+
 
     }
 
