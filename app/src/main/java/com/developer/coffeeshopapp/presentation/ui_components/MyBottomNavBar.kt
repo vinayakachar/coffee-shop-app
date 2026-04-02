@@ -14,18 +14,19 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
 import com.developer.coffeeshopapp.R
+import com.developer.coffeeshopapp.presentation.navigation.Routes
 import com.developer.coffeeshopapp.presentation.theme.LightBrown
 import com.developer.coffeeshopapp.presentation.theme.LightGray
 
-@Preview(showBackground = true, showSystemUi = true)
 @Composable
-fun MyBottomaNavBar() {
+fun MyBottomaNavBar(navController: NavHostController,routes: String) {
    val navItems=listOf(
-       NavItem("Home",R.drawable.regular_outline_home),
-       NavItem("Cart",R.drawable.regular_outline_bag),
-       NavItem("Favorites",R.drawable.regular_outline_heart),
-       NavItem("Profile",R.drawable.outline_account_circle_24)
+       NavItem("Home",R.drawable.regular_outline_home,Routes.HomeScreen),
+       NavItem("Cart",R.drawable.regular_outline_bag,Routes.CartScreen),
+       NavItem("Favorites",R.drawable.regular_outline_heart, Routes.FavoritesScreen),
+       NavItem("Profile",R.drawable.outline_account_circle_24, Routes.ProfileScreen)
    )
     NavigationBar(
         contentColor = MaterialTheme.colorScheme.surface,
@@ -33,8 +34,18 @@ fun MyBottomaNavBar() {
     ) {
         navItems.forEachIndexed { index, item ->
             NavigationBarItem(
-                selected = true,
-                onClick = {  },
+                selected = item.title==routes,
+
+                onClick = {
+                    navController.navigate(item.routes){
+                        popUpTo(navController.graph.startDestinationId){
+                            saveState=true
+                        }
+                        launchSingleTop=true
+                        restoreState=true
+                    }
+                },
+
                 icon = { Icon(
                     painter = painterResource(id = item.icon),
                     contentDescription = item.title
@@ -57,5 +68,6 @@ fun MyBottomaNavBar() {
 
 data class NavItem(
     val title: String,
-    val icon: Int
+    val icon: Int,
+    val routes: Routes
 )

@@ -40,8 +40,9 @@ fun WelcomeScreen(navController: NavHostController) {
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Bottom) {
 
-            Text(text = "Fall in Love with Coffe in Blissful Delight",
+            Text(text = "Fall in Love with Coffee in Blissful Delight",
                 fontSize = 28.sp,
+                lineHeight = 38.sp,
                 fontWeight = FontWeight.Bold,
                 color = Color.White,
                 textAlign = TextAlign.Center,
@@ -49,7 +50,7 @@ fun WelcomeScreen(navController: NavHostController) {
 
             Spacer(modifier = Modifier.height(16.dp))
 
-            Text(text = "Welcome to out cozy coffe corner,where every up is a delight for you",
+            Text(text = "Welcome to our cozy coffee corner, where every cup is a delight for you",
                 fontSize = 15.sp,
                 color = Color.LightGray,
                 textAlign = TextAlign.Center)

@@ -22,7 +22,6 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
@@ -36,7 +35,7 @@ fun HomeScreen(navController: NavHostController) {
     val location="PurnaprajnaLayout, Uttarahalli"
     Scaffold(
         bottomBar = {
-            MyBottomaNavBar()
+            MyBottomaNavBar(navController,"Home")
         }
     ) {innerPadding->
         Box(

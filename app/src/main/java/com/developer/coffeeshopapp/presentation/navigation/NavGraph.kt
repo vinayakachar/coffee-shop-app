@@ -5,6 +5,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.toRoute
+import com.developer.coffeeshopapp.presentation.screens.cartscreen.CartScreen
 import com.developer.coffeeshopapp.presentation.screens.detailsscreen.DetailsScreen
 import com.developer.coffeeshopapp.presentation.screens.homescreen.HomeScreen
 import com.developer.coffeeshopapp.presentation.screens.welcomescreen.WelcomeScreen
@@ -24,8 +25,10 @@ fun NavGraph() {
         composable<Routes.DetailsScreen>{backStackEntry->
             val args=backStackEntry.toRoute<Routes.DetailsScreen>()
             DetailsScreen(productId=args.productId,navController)
+        }
 
-
+        composable<Routes.CartScreen> {
+            CartScreen(navController)
         }
 
     }
